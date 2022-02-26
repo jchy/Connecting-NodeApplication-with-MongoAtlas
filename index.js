@@ -13,14 +13,6 @@ const connectionParams = {
     useUnifiedTopology: true
 }
 
-mongoose.connect(dbUrl, connectionParams)
-    .then(() => {
-        console.log("Connected to MongoDB");
-    })
-    .catch(err => {
-        console.log("Error connecting", err);
-    });
-
 app.listen(PORT, ()=>{
     console.log(`Server is listening on PORT : ${PORT}`);
 });
@@ -28,7 +20,7 @@ app.listen(PORT, ()=>{
 app.get('/insert',(req, res)=>{
     var user = new User();
     user.name = "Jaswant"
-    user.email = "abc@gmail.com"
+    user.email = "lmn@gmail.com"
     user.password = "abcd@123"
     user.save((err,data)=>{
         if(err){ 
