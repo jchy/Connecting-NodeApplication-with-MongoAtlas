@@ -9,6 +9,7 @@
 ```
   npm i
 ```
+- STEP 4. Go to the mongoDB ATls at https://cloud.mongodb.com and setup a data base and obtain the user credential assign your connect Apllication credential to DB_URL
 - STEP 5. Open you browser and goto the the following URL to insert the data
 ```js
   http://localhost:3000/insert
