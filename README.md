@@ -22,3 +22,7 @@
 ```js
   http://localhost:3000/update?id=< put_user_ID here >&name= < Put_new_username Here >
 ```
+- STEP 8. To perform deletion operation goto following url
+```js
+  http://localhost:3000/delete?id=< put_user_ID_to_be_deleted here >
+```
