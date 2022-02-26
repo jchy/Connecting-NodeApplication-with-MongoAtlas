@@ -1,23 +1,24 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const User = require('./models/user.model');
+const connect = require('./config/config');
 require('dotenv').config();
+
 
 const app = express();
 
 const PORT = 3000;
-const dbUrl = process.env.MONGO_ATLAS_URL;
 
-const connectionParams = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+const start = async ()=>{
+    await connect();
+
+    app.listen(PORT, ()=>{
+        console.log(`Server is listening on PORT : ${PORT}`);
+    });
 }
+start();
 
-app.listen(PORT, ()=>{
-    console.log(`Server is listening on PORT : ${PORT}`);
-});
-
-app.get('/insert',(req, res)=>{
+app.get('/insert', (req, res)=>{
     var user = new User();
     user.name = "Jaswant"
     user.email = "lmn@gmail.com"
