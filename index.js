@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const User = require('./models/user.model');
+require('dotenv').config();
 
 const app = express();
 
 const PORT = 3000;
-
-const dbUrl = "mongodb+srv://Jaswant:UvKK5hfnKtBaSaQ2@cluster0.awjw4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const dbUrl = process.env.MONGO_ATLAS_URL;
 
 const connectionParams = {
     useNewUrlParser: true,
